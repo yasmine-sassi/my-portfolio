@@ -4,6 +4,8 @@ import { ArrowRight, Terminal } from "lucide-react";
 
 export function Hero() {
   const [cursorVisible, setCursorVisible] = useState(true);
+  const textToAnimate = "Yasmine Sassi";
+  const [typedText, setTypedText] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -12,8 +14,20 @@ export function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  const textToAnimate = "Yasmine Sassi";
-  const words = textToAnimate.split(" ");
+  useEffect(() => {
+    let currentIndex = 0;
+
+    const typingInterval = setInterval(() => {
+      currentIndex += 1;
+      setTypedText(textToAnimate.slice(0, currentIndex));
+
+      if (currentIndex >= textToAnimate.length) {
+        clearInterval(typingInterval);
+      }
+    }, 120);
+
+    return () => clearInterval(typingInterval);
+  }, [textToAnimate]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -74,15 +88,12 @@ export function Hero() {
           >
             I'm{" "}
             <span className="inline-block">
-              {words.map((word, i) => (
-                <motion.span
-                  key={i}
-                  variants={wordVariants}
-                  className="inline-block mr-3 lg:mr-4 text-gradient"
-                >
-                  {word}
-                </motion.span>
-              ))}
+              <motion.span
+                variants={wordVariants}
+                className="inline-block text-gradient"
+              >
+                {typedText}
+              </motion.span>
               <span
                 className={`inline-block w-1.5 h-12 md:h-16 lg:h-20 bg-primary translate-y-2 md:translate-y-3 ${cursorVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}
               />

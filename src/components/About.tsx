@@ -86,13 +86,9 @@ export function About() {
               className="relative aspect-square rounded-[2.5rem] overflow-hidden border border-border shadow-[0_4px_40px_rgba(44,42,40,0.08)] bg-card"
             >
               <img
-                src={`${import.meta.env.BASE_URL}images/avatar.png`}
+                src="/images/yasmine.jpeg"
                 alt="Yasmine Sassi"
                 className="w-full h-full object-cover opacity-100 hover:scale-105 transition-all duration-700"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent"></div>
             </motion.div>
@@ -124,12 +120,15 @@ export function About() {
               variants={itemVariants}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Hello! I'm Yasmine, a dedicated software engineering student with
-              an insatiable curiosity for technology. I specialize in building
-              robust, full-stack applications that pair elegant user interfaces
-              with powerful backend architectures. My journey in tech is driven
-              by a desire to turn complex logic into intuitive digital
-              experiences.
+              I’m Yasmine, a fourth-year software engineering student at INSAT,
+              passionate about building practical, elegant tech solutions. I’ve
+              tackled <strong>AI</strong>, <strong>Deep Learning</strong>, <strong>DevOps</strong>,{" "}
+              <strong>Big Data</strong>, <strong>network security</strong>,{" "}
+              <strong>software architecture</strong>, <strong>image processing</strong> and
+              creating projects from <strong>CNNs</strong> to secure network
+              systems. Fast-learning, adaptable, and
+              hands-on, I thrive on transforming complex problems into
+              real-world applications.
             </motion.p>
 
             <motion.div
@@ -155,7 +154,9 @@ export function About() {
                   <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
                     Role
                   </p>
-                  <p className="font-semibold text-foreground">SE Student</p>
+                  <p className="font-semibold text-foreground">
+                    SWE Student at INSAT
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 rounded-2xl border border-border bg-card shadow-sm hover:border-primary/30 hover:shadow-primary/10 transition-all sm:col-span-2">
@@ -167,7 +168,7 @@ export function About() {
                     Location
                   </p>
                   <p className="font-semibold text-foreground">
-                    Open to remote & relocation
+                    Tunis, Tunisia
                   </p>
                 </div>
               </div>
@@ -176,11 +177,10 @@ export function About() {
             {/* Stats */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-3 gap-4 py-8 border-t border-border"
+              className="grid grid-cols-2 gap-1 py-8 border-t border-border"
             >
               <Counter from={0} to={10} label="Projects" />
               <Counter from={0} to={2} label="Years" />
-              <Counter from={0} to={3} label="Goals" />
             </motion.div>
           </motion.div>
         </div>

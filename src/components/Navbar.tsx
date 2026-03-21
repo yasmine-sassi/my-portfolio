@@ -73,7 +73,7 @@ export function Navbar() {
           <div className="w-10 h-10 rounded-[1.25rem] bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-sm group-hover:shadow-primary/20 transition-all duration-300 group-hover:scale-105">
             <Code2 className="text-white w-6 h-6" />
           </div>
-          <span className="font-display font-bold text-xl tracking-wide text-foreground">
+          <span className="font-display font-bold text-3xl tracking-wide text-foreground">
             YS<span className="text-primary">.</span>
           </span>
         </a>
@@ -105,39 +105,34 @@ export function Navbar() {
           <button
             onClick={toggle}
             aria-label="Toggle dark mode"
-            className="w-9 h-9 rounded-full border border-border bg-background/60 hover:bg-muted flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/40 text-muted-foreground hover:text-foreground"
+            className={`relative h-10 w-20 overflow-hidden rounded-full border transition-all duration-300 shadow-sm ${
+              isDark
+                ? "bg-primary/20 border-primary/30"
+                : "bg-secondary/20 border-secondary/30"
+            }`}
           >
-            <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              initial={false}
+              animate={{ x: isDark ? 40 : 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 180,
+                damping: 26,
+                mass: 1.1,
+              }}
+              className={`absolute left-1 top-1 grid h-8 w-8 place-items-center rounded-full ${
+                isDark
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-secondary text-secondary-foreground"
+              }`}
+            >
               {isDark ? (
-                <motion.span
-                  key="sun"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Sun className="w-4 h-4" />
-                </motion.span>
+                <Moon className="w-4 h-4" />
               ) : (
-                <motion.span
-                  key="moon"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Moon className="w-4 h-4" />
-                </motion.span>
+                <Sun className="w-4 h-4" />
               )}
-            </AnimatePresence>
+            </motion.span>
           </button>
-
-          <a
-            href="#contact"
-            className="px-5 py-2.5 text-sm font-semibold rounded-full bg-primary/10 border border-primary/40 hover:bg-primary/20 text-foreground transition-all duration-300 shadow-sm"
-          >
-            Hire Me
-          </a>
         </nav>
 
         {/* Mobile right side */}
@@ -145,31 +140,33 @@ export function Navbar() {
           <button
             onClick={toggle}
             aria-label="Toggle dark mode"
-            className="w-9 h-9 rounded-full border border-border bg-background/60 hover:bg-muted flex items-center justify-center transition-all duration-300 text-muted-foreground hover:text-foreground"
+            className={`relative h-10 w-24 overflow-hidden rounded-full border transition-all duration-300 shadow-sm ${
+              isDark
+                ? "bg-primary/20 border-primary/30"
+                : "bg-secondary/20 border-secondary/30"
+            }`}
           >
-            <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              initial={false}
+              animate={{ x: isDark ? 56 : 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 180,
+                damping: 26,
+                mass: 1.1,
+              }}
+              className={`absolute left-1 top-1 grid h-8 w-8 place-items-center rounded-full ${
+                isDark
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-secondary text-secondary-foreground"
+              }`}
+            >
               {isDark ? (
-                <motion.span
-                  key="sun-m"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Sun className="w-4 h-4" />
-                </motion.span>
+                <Moon className="w-4 h-4" />
               ) : (
-                <motion.span
-                  key="moon-m"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Moon className="w-4 h-4" />
-                </motion.span>
+                <Sun className="w-4 h-4" />
               )}
-            </AnimatePresence>
+            </motion.span>
           </button>
           <button
             className="text-foreground p-2 focus:outline-none"
