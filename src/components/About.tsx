@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { User, GraduationCap, MapPin } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
-import yasmineImage from "@/assets/yasmine.jpeg";
 
 function Counter({
   from,
@@ -87,7 +86,7 @@ export function About() {
               className="relative aspect-square rounded-[2.5rem] overflow-hidden border border-border shadow-[0_4px_40px_rgba(44,42,40,0.08)] bg-card"
             >
               <img
-                src={yasmineImage}
+                src={`${import.meta.env.BASE_URL}images/yasmine.jpeg`}
                 alt="Yasmine Sassi"
                 className="w-full h-full object-cover opacity-100 hover:scale-105 transition-all duration-700"
               />
