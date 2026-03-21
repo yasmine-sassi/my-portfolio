@@ -86,7 +86,7 @@ export function About() {
               className="relative aspect-square rounded-[2.5rem] overflow-hidden border border-border shadow-[0_4px_40px_rgba(44,42,40,0.08)] bg-card"
             >
               <img
-                src="/images/yasmine.jpeg"
+                src={`${import.meta.env.BASE_URL}images/yasmine.jpeg`}
                 alt="Yasmine Sassi"
                 className="w-full h-full object-cover opacity-100 hover:scale-105 transition-all duration-700"
               />
@@ -122,13 +122,14 @@ export function About() {
             >
               I’m Yasmine, a fourth-year software engineering student at INSAT,
               passionate about building practical, elegant tech solutions. I’ve
-              tackled <strong>AI</strong>, <strong>Deep Learning</strong>, <strong>DevOps</strong>,{" "}
-              <strong>Big Data</strong>, <strong>network security</strong>,{" "}
-              <strong>software architecture</strong>, <strong>image processing</strong> and
-              creating projects from <strong>CNNs</strong> to secure network
-              systems. Fast-learning, adaptable, and
-              hands-on, I thrive on transforming complex problems into
-              real-world applications.
+              tackled <strong>AI</strong>, <strong>Deep Learning</strong>,{" "}
+              <strong>DevOps</strong>, <strong>Big Data</strong>,{" "}
+              <strong>network security</strong>,{" "}
+              <strong>software architecture</strong>,{" "}
+              <strong>image processing</strong> and creating projects from{" "}
+              <strong>CNNs</strong> to secure network systems. Fast-learning,
+              adaptable, and hands-on, I thrive on transforming complex problems
+              into real-world applications.
             </motion.p>
 
             <motion.div
