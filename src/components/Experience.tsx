@@ -34,7 +34,7 @@ export function Experience() {
     <section id="experience" className="py-24 relative border-t border-border">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="mb-16">
+        <div className="text-center mb-14 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
