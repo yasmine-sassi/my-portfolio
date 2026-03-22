@@ -129,7 +129,16 @@ export function Experience() {
                         {exp.role}
                       </h4>
                       <p className="text-sm font-semibold text-muted-foreground mb-4">
-                        {exp.company.includes("(INSAT)") ? (
+                        {exp.company === "Welyne" ? (
+                          <a
+                            href="https://www.welyne.com"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-primary hover:underline underline-offset-4"
+                          >
+                            Welyne
+                          </a>
+                        ) : exp.company.includes("(INSAT)") ? (
                           <>
                             {exp.company.replace(" (INSAT)", "")} (
                             <a
