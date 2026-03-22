@@ -4,14 +4,13 @@ import { Briefcase, GraduationCap, CalendarDays } from "lucide-react";
 const experiences = [
   {
     type: "work",
-    role: "Software Engineering Intern",
-    company: "TechCorp Solutions",
+    role: "AI Full Stack Intern",
+    company: "Welyne",
     period: "Jun 2025 – Sep 2025",
-    location: "Remote",
+    location: "Tunis, Tunisia",
     description: [
-      "Built and shipped a React dashboard that reduced report generation time by 40%.",
-      "Collaborated with a team of 5 engineers in an Agile environment using Jira and GitHub.",
-      "Improved REST API response times by 25% through query optimization in PostgreSQL.",
+      "Built hand & foot measurement system using YOLOv8 + MediaPipe",
+      "Integrated FastAPI backend for inference and React frontend for user interface and Laravel for admin dashboard",
     ],
   },
   {
