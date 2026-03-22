@@ -33,7 +33,14 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      const sections = ["home", "about", "skills", "projects", "contact"];
+      const sections = [
+        "home",
+        "about",
+        "skills",
+        "experience",
+        "projects",
+        "contact",
+      ];
       const current = sections.find((section) => {
         const el = document.getElementById(section);
         if (el) {
@@ -53,6 +60,7 @@ export function Navbar() {
   const navLinks = [
     { name: "About", href: "#about", id: "about" },
     { name: "Skills", href: "#skills", id: "skills" },
+    { name: "Experience", href: "#experience", id: "experience" },
     { name: "Projects", href: "#projects", id: "projects" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];

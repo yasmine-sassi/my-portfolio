@@ -18,7 +18,11 @@ export function Skills() {
     },
 
     // Frontend
-    { name: "React / Angular", icon: <LayoutTemplate />, category: "Frontend" },
+    {
+      name: "React / Angular",
+      icon: <LayoutTemplate />,
+      category: "Frontend",
+    },
 
     // Backend
     {
@@ -55,7 +59,7 @@ export function Skills() {
     <section id="skills" className="py-24 md:py-32 relative">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(168,181,162,0.05)_0%,transparent_70%)] rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 relative z-10">
         <div className="text-center mb-14 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +94,7 @@ export function Skills() {
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-7 items-stretch">
           {skills.map((skill, index) => (
             <motion.div
-              key={skill.name}
+              key={skill.category}
               initial={{ opacity: 0, y: 24, scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
@@ -99,7 +103,7 @@ export function Skills() {
                 delay: index * 0.07,
                 ease: "easeOut",
               }}
-              className="h-full min-h-[248px] bg-card/90 border border-border shadow-sm hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 p-6 md:p-8 rounded-[2rem] group flex flex-col items-center justify-center text-center relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
+              className="h-full min-h-[220px] sm:min-h-[248px] bg-card/90 border border-border shadow-sm hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 p-5 sm:p-6 md:p-8 rounded-[2rem] group flex flex-col items-center justify-center text-center relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
             >
               <div className="absolute top-0 left-6 right-6 h-px bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
