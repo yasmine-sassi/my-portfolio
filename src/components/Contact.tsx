@@ -57,7 +57,7 @@ export function Contact() {
 
               <div className="flex flex-col gap-6">
                 <a
-                  href="mailto:hello@yasminesassi.com"
+                  href="mailto:yasmine.3.sassi@gmail.com"
                   className="flex items-center gap-4 group w-fit"
                 >
                   <div className="w-12 h-12 rounded-full border border-border bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
@@ -68,7 +68,7 @@ export function Contact() {
                       Email
                     </p>
                     <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                      hello@yasminesassi.com
+                      yasmine.3.sassi@gmail.com
                     </p>
                   </div>
                 </a>
