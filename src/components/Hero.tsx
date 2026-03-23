@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Terminal } from "lucide-react";
+import { ArrowRight, Terminal, Download } from "lucide-react";
 
 export function Hero() {
   const [cursorVisible, setCursorVisible] = useState(true);
@@ -127,6 +127,14 @@ export function Hero() {
               className="px-8 py-4 rounded-full font-semibold border border-primary/30 bg-primary/10 text-foreground hover:bg-primary/20 transition-all duration-300"
             >
               Contact Me
+            </a>
+            <a
+              href={`${import.meta.env.BASE_URL}Sassi-Yasmine.pdf`}
+              download="Yasmine-Sassi-CV.pdf"
+              className="px-8 py-4 rounded-full font-semibold border border-border bg-card text-foreground hover:border-primary/30 hover:text-primary transition-all duration-300 flex items-center gap-2"
+            >
+              <Download className="w-4 h-4" />
+              Download CV
             </a>
           </motion.div>
         </motion.div>

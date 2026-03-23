@@ -1,24 +1,70 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS is not configured");
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          subject: `Portfolio Contact — ${formData.name}`,
+        },
+        {
+          publicKey,
+        },
+      );
+
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out. I'll get back to you soon.",
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      const description =
+        error instanceof Error && error.message === "EmailJS is not configured"
+          ? "Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY in your .env file."
+          : "Something went wrong while sending. Please try again in a moment.";
+
+      toast({
+        title: "Sending failed",
+        description,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -110,6 +156,8 @@ export function Contact() {
                     type="text"
                     id="name"
                     required
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="John Doe"
                     className="w-full bg-background border border-border rounded-xl px-5 py-4 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all"
                   />
@@ -126,6 +174,8 @@ export function Contact() {
                     type="email"
                     id="email"
                     required
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="john@example.com"
                     className="w-full bg-background border border-border rounded-xl px-5 py-4 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all"
                   />
@@ -142,6 +192,8 @@ export function Contact() {
                     id="message"
                     required
                     rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Tell me about your project..."
                     className="w-full bg-background border border-border rounded-xl px-5 py-4 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all resize-none"
                   ></textarea>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2, Sun, Moon } from "lucide-react";
+import { Menu, X, Code2, Sun, Moon, Download } from "lucide-react";
 
 function useTheme() {
   const [isDark, setIsDark] = useState(() => {
@@ -109,6 +109,15 @@ export function Navbar() {
             </a>
           ))}
 
+          <a
+            href={`${import.meta.env.BASE_URL}Sassi-Yasmine.pdf`}
+            download="Yasmine-Sassi-CV.pdf"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground hover:border-primary/30 hover:text-primary transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            Download CV
+          </a>
+
           {/* Theme Toggle */}
           <button
             onClick={toggle}
@@ -195,6 +204,16 @@ export function Navbar() {
             className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden md:hidden shadow-lg"
           >
             <div className="p-6 flex flex-col gap-4">
+              <a
+                href={`${import.meta.env.BASE_URL}Sassi-Yasmine.pdf`}
+                download="Yasmine-Sassi-CV.pdf"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg font-medium transition-colors py-2 border-b border-border flex items-center gap-3 text-foreground hover:text-primary"
+              >
+                <Download className="w-5 h-5" />
+                Download CV
+              </a>
+
               {navLinks.map((link) => (
                 <a
                   key={link.name}
