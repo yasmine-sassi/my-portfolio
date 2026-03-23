@@ -13,33 +13,76 @@ type Project = {
 export function Projects() {
   const projects: Project[] = [
     {
-      title: "AI Task Manager",
+      title: "Tunisan Real Estate Price Prediction",
       description:
-        "A smart task management system that uses natural language processing to automatically categorize and prioritize daily tasks.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-      tags: ["React", "Node.js", "OpenAI API", "MongoDB"],
+        "A machine learning-based platform for predicting real estate prices in Tunisia. Uses advanced ML algorithms trained on 12,000+ properties data and predict rental and sale prices with high accuracy (0.878 accuracy for rental models) through an intuitive full-stack web application.",
+      image: "/images/Tun.png",
+      tags: [
+        "Python",
+        "scikit-learn",
+        "Pandas",
+        "Matplotlib",
+        "ML",
+        "Data Science",
+        "Data engineering",
+        "React",
+        "NestJS",
+      ],
+      github:
+        "https://github.com/yasmine-sassi/Tunisan-Real-Estate-Price-Prediction-Platform.git",
+      demo: "#",
+    },
+    {
+      title: "ai-package-delivery",
+      description:
+        "An intelligent package delivery solution that uses AI search algorithms to optimize routing, reduce delays, and improve delivery efficiency in a grid-based environment with traffic constraints, tunnels, and multiple delivery points.",
+      image: "/images/Search.png",
+      tags: ["SpringBoot", "BFD", "DFS", "IDS", "UCS"],
+      github: "https://github.com/yasmine-sassi/ai-package-delivery.git",
+      demo: "#",
+    },
+    {
+      title: "RumourCheck",
+      description:
+        "An AI-powered fact-checking platform that analyzes online claims and classifies potential misinformation.",
+      image: "/images/RumourCheck.png",
+      tags: ["Python", "NLP", "FastAPI", "ML"],
+      github: "https://github.com/yasmine-sassi/RumourCheck.git",
+      demo: "#",
+    },
+    {
+      title: "DinePilot",
+      description:
+        "A Computer Vision + AI solution for restaurant floor intelligence that tracks table occupancy in real time, measures customer wait times, detects personal belongings to mark tables as reserved, and generates predictive monthly insights. Delivered measurable impact: 30–40% higher table turnover and 20–30% lower guest wait times.",
+      image: "/images/DinePlot.jpeg",
+      tags: [
+        "YOLOv11x",
+        "YOLOv8x-pose",
+        "Computer Vision",
+        "React Dashboard",
+        "FastAPI",
+        "Predictive Analytics",
+      ],
       github: "#",
       demo: "#",
     },
     {
-      title: "Crypto Dashboard",
+      title: "TaskFlow-Pro",
       description:
-        "Real-time cryptocurrency portfolio tracker with live websocket data, interactive charts, and predictive trend analytics.",
-      image:
-        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&q=80",
-      tags: ["TypeScript", "Vue", "WebSockets", "Tailwind"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "E-Commerce Microservices",
-      description:
-        "A scalable backend architecture for an e-commerce platform built with Spring Boot, handling authentication, inventory, and payments.",
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
-      tags: ["Java", "Spring Boot", "Docker", "PostgreSQL"],
-      github: "#",
+        "A task and project management platform that helps teams collaborate effectively. It enables teams to organize, assign, and track work through a unified workspace, centralizing projects, tasks, and team communication in one place.",
+      image: "/images/Taskflow.png",
+      tags: [
+        "Angular 21",
+        "Tailwind CSS",
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "Supabase",
+        "Prisma",
+        "JWT",
+        "WebSocket",
+      ],
+      github: "https://github.com/yasmine-sassi/TaskFlow-Pro-Frontend.git",
       demo: "#",
     },
   ];

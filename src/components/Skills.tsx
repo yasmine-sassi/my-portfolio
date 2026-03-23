@@ -6,15 +6,22 @@ import {
   Server,
   Container,
   BrainCircuit,
+  Smartphone,
 } from "lucide-react";
 
 export function Skills() {
   const skills = [
     // Languages
     {
-      name: "JavaScript / TS / Python / Java / C++",
+      name: "JavaScript / TS / Python / Java / C++ / PHP ",
       icon: <Code2 />,
       category: "Languages",
+    },
+    // Frameworks & Libraries
+    {
+      name: "SpringBoot / .NET / Django / Flask",
+      icon: <Container />,
+      category: "Frameworks",
     },
 
     // Frontend
@@ -38,18 +45,25 @@ export function Skills() {
       category: "Database",
     },
 
+    // Mobile
+    {
+      name: "Flutter",
+      icon: <Smartphone />,
+      category: "Mobile",
+    },
+
+    // DevOps & Tools
+    {
+      name: "Docker / Kubernetes / Git / Jenkins",
+      icon: <Container />,
+      category: "DevOps",
+    },
+
     // ML & Data Science
     {
       name: "Scikit-learn / Pandas & NumPy / Matplotlib & Seaborn / OpenCV / MediaPipe",
       icon: <BrainCircuit />,
       category: "ML & Data",
-    },
-
-    // DevOps & Tools
-    {
-      name: "Docker / Kubernetes / Git",
-      icon: <Container />,
-      category: "DevOps",
     },
   ];
 
@@ -91,7 +105,7 @@ export function Skills() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-7 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-7 items-stretch">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.category}

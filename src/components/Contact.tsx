@@ -75,13 +75,19 @@ export function Contact() {
 
                 <div className="flex gap-4 mt-4">
                   <a
-                    href="#"
+                    href="https://github.com/yasmine-sassi"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="GitHub profile"
                     className="w-12 h-12 rounded-full border border-border bg-background flex items-center justify-center text-foreground hover:scale-110 hover:bg-foreground hover:text-background transition-all duration-300 shadow-sm hover:shadow-md"
                   >
                     <Github className="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/yasmine-sassi-536138249/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn profile"
                     className="w-12 h-12 rounded-full border border-border bg-background flex items-center justify-center text-foreground hover:scale-110 hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                   >
                     <Linkedin className="w-5 h-5" />
