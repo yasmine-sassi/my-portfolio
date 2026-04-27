@@ -16,6 +16,43 @@ export function Projects() {
 
   const projects: Project[] = [
     {
+      title: "Tunisian Arabic Spoken Dialogue System – ASR & LLM",
+      description:
+        "A voice assistant tailored for the Tunisian dialect, combining Automatic Speech Recognition and Large Language Models. Fine-tuned ASR models (Whisper, w2v-BERT, MMS) on 400 hours of speech data and adapted an LLM (Aya-8B) using QLoRA and RAG to generate natural, context-aware responses.",
+      image: imageUrl("tun2.png"),
+      tags: [
+        "PyTorch",
+        "Hugging Face",
+        "Whisper",
+        "ASR",
+        "QLoRA",
+        "RAG",
+        "LLM",
+        "Speech Processing",
+      ],
+      github: "https://github.com/yasmine-sassi/TunisianDialogSystem",
+      demo: "#",
+    },
+    {
+      title: "AI Voice Agent Platform",
+      description:
+        "A multi-tenant AI-powered customer support platform that handles inbound calls via Twilio, processes interactions using LLMs, and delivers real-time analytics. Supports multiple business domains with intelligent intent detection, sentiment analysis, multilingual responses (EN/FR/AR), and automatic escalation to human agents using RAG-based knowledge retrieval.",
+      image: imageUrl("voice_agent.png"),
+      tags: [
+        "Python",
+        "FastAPI",
+        "LLM",
+        "RAG",
+        "Twilio",
+        "Streamlit",
+        "NLP",
+        "Multilingual AI",
+        "Analytics",
+      ],
+      github: "https://github.com/yasmine-sassi/Ai-customer-support-agent",
+      demo: "#",
+    },
+    {
       title: "Tunisan Real Estate Price Prediction",
       description:
         "A machine learning-based platform for predicting real estate prices in Tunisia. Uses advanced ML algorithms trained on 12,000+ properties data and predict rental and sale prices with high accuracy (0.878 accuracy for rental models) through an intuitive full-stack web application.",
@@ -33,6 +70,22 @@ export function Projects() {
       ],
       github:
         "https://github.com/yasmine-sassi/Tunisan-Real-Estate-Price-Prediction-Platform.git",
+      demo: "#",
+    },
+    {
+      title: "Real time Facial Expressions Recognition",
+      description:
+        "A deep learning-based system for detecting and classifying human emotions from facial expressions. The pipeline includes face detection, feature extraction, and emotion classification into core expressions such as happiness, sadness, anger,disgust and surprise.",
+      image: imageUrl("FER.png"),
+      tags: [
+        "Python",
+        "PyTorch",
+        "Deep Learning",
+        "CNN",
+        "ResNet50",
+        "Emotion Recognition",
+      ],
+      github: "https://github.com/yasmine-sassi/facial-expressions-recognition",
       demo: "#",
     },
     {
