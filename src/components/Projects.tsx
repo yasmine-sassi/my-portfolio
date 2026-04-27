@@ -37,7 +37,7 @@ export function Projects() {
       title: "AI Voice Agent Platform",
       description:
         "A multi-tenant AI-powered customer support platform that handles inbound calls via Twilio, processes interactions using LLMs, and delivers real-time analytics. Supports multiple business domains with intelligent intent detection, sentiment analysis, multilingual responses (EN/FR/AR), and automatic escalation to human agents using RAG-based knowledge retrieval.",
-      image: imageUrl("voice_agent.png"),
+      image: imageUrl("AIVoiceAg.png"),
       tags: [
         "Python",
         "FastAPI",
